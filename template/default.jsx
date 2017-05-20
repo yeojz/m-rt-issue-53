@@ -6,9 +6,10 @@ class Default extends Component {
     const Content = evaluate(this.props.contents).default;
 
     return (
-      <div>
+      <section>
+        <span>default</span>
         <Content />
-      </div>
+      </section>
     );
   }
 }

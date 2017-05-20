@@ -4,15 +4,15 @@ import Module from 'module';
 import babelConfig from '../babelrc.json';
 
 function evaluate(contents, filename = '') {
-	const m = new Module(filename, module.parent);
+  const m = new Module(filename, module.parent);
 
-	m.filename = filename;
-	m.paths =  Module._nodeModulePaths(path.dirname(filename));
+  m.filename = filename;
+  m.paths =  Module._nodeModulePaths(path.dirname(filename));
 
   const code = transform(contents, babelConfig).code;
-	m._compile(code, filename);
+  m._compile(code, filename);
 
-	return m.exports;
+  return m.exports;
 }
 
 export default evaluate;
